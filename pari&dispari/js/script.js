@@ -8,11 +8,12 @@ Dichiariamo chi ha vinto.
  */
 
 let userChoice = prompt ("Pari o Dispari");
-let userNember =prompt ("Scegli un numero da 1 a 5")
+const userNumber = parseInt (prompt ("Scegli un numero da 1 a 5"));
+let pcNumber = randomNumber(1, 5);
 
-if (userChoice === "pari" && randomNumber (1, 5) / 2 === 0 ) {
+if (userChoice === "pari" && ((userNumber.valueOf + pcNumber / 2) === 0)) {
     userChoice = true;
-}   else if (userChoice === "dispari" && randomNumber (1, 5) / 2 !== 0) {
+}   else if (userChoice === "dispari" && ((userNumber.valueOf + pcNumber / 2) === 0)) {
     userChoice = false;
 }   else userChoice = "Your choise is not correct";
 
@@ -25,8 +26,9 @@ if (userChoice === "pari" && randomNumber (1, 5) / 2 === 0 ) {
 
 
 function randomNumber (minN, maxN) {
-    const randomNumber = Math.floor ( Math.random() * (maxN - minN) + minN);
+    const randomNumber = Math.floor ( Math.random() * (maxN - minN) + 1);
     return randomNumber;
 }
 
 console.log (userChoice);
+console.log (randomNumber(1, 5));
